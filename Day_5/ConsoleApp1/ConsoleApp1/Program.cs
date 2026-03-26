@@ -28,13 +28,13 @@
 
         public BankAccount(string accountNumber)
         {
-            accountNumber = accountNumber;
+            _accountNumber = accountNumber;
             _balance = 0;
         }
 
         public BankAccount(string accountNumber, double initialBalance)
         {
-            accountNumber = accountNumber;
+            _accountNumber = accountNumber;
             _balance = initialBalance >= 0 ? initialBalance : 0;
         }
 
@@ -75,7 +75,7 @@
         public void SetBalance(double balance)
         {
             if (balance >= 0)
-                balance = balance;
+                _balance = balance;
             else
                 Console.WriteLine("Balance cannot be negative.");
         }
