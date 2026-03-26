@@ -4,13 +4,13 @@
     {
         static void Main(string[] args)
         {
-            BankAccount acc = new BankAccount("ACC-001", 500);
-            acc.Deposit(200);       
-            acc.Deposit(50);       
-            acc.Withdraw(100);
-            acc.SetBalance(-10);     
+            BankAccount acc = new BankAccount("ACC1", 500000);
+            acc.Deposit(2000);
+            acc.Deposit(500);
+            acc.Withdraw(10000);
+            acc.SetBalance(-1000);
             acc.PrintInfo();
-            Console.WriteLine($"private Balance:{ acc.GetBalance()}");
+            Console.WriteLine(acc.GetBalance());
         }
     }
     public class BankAccount
@@ -79,6 +79,9 @@
             else
                 Console.WriteLine("Balance cannot be negative.");
         }
-        ~BankAccount() { }
+        ~BankAccount()
+        {
+            Console.WriteLine($"Bank account {_accountNumber} is being closed.");
+        }
     }
 }
